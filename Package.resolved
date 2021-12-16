@@ -1,0 +1,16 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "punycode",
+        "repositoryURL": "https://github.com/viktorcode/punycode",
+        "state": {
+          "branch": "master",
+          "revision": "7881560e50020a5f58d82b0b6ca0c8a4109c5bff",
+          "version": null
+        }
+      }
+    ]
+  },
+  "version": 1
+}

@@ -22,10 +22,9 @@ let package = Package(
         .target(
             name: "pslUtil",
             dependencies: [
-                "punycode"
+                "punycode",
             ]),
         .testTarget(
             name: "pslUtilTests",
             dependencies: ["pslUtil"]),
-    ]
-)
+    ])

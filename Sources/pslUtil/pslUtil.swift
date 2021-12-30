@@ -16,7 +16,7 @@ struct ParseResult {
 public enum pslUtil {
     private static var preload = [String: DomainRule]()
 
-    static func preload(callback: @escaping (Bool) -> Void) {
+    public static func preload(callback: @escaping (Bool) -> Void) {
         Preload.preload(callback: { result in
             switch result {
                 case .success(let data):
@@ -29,11 +29,11 @@ public enum pslUtil {
         })
     }
 
-    static func reload() {
+    public static func reload() {
         preload(callback: { _ in })
     }
 
-    static func parse(_ domain: String) -> ParseResult? {
+    public static func parse(_ domain: String) -> ParseResult? {
         guard preload.isEmpty == false else { return nil }
         guard domain.isEmpty == false, domain.hasPrefix(".") == false, domain.contains(".") == true else {
             return nil
@@ -66,11 +66,11 @@ public enum pslUtil {
         return nil
     }
 
-    static func get(_ domain: String) -> String? {
+    public static func get(_ domain: String) -> String? {
         return parse(domain)?.domain
     }
 
-    static func isValid(_ domain: String) -> Bool {
+    public static func isValid(_ domain: String) -> Bool {
         return get(domain) != nil
     }
 }
